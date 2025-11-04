@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Form</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {display: flex;
+            justify-content: center;
+            padding: 2rem;
+            background-color: #f7f7f7; }
+        .form-container { background-color: white;
+            padding: 2rem;
+            border-radius: 0.5rem;
+            box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1); }
+        form label { display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 600; }
+        form input[type="text"],
+        form input[type="email"],
+        form textarea { width: 100%;
+            padding: 0.5rem;
+            border: 1px solid #ccc;
+            border-radius: 0.25rem;
+            margin-bottom: 1rem; }
+    </style>
+</head>
+<body>
+    <div class="form-container">
+        <h1 class="text-2xl font-bold mb-6 text-center">Contact Us</h1>
+        
+        <form action="#" method="post">
+            <label for="fname">First Name:</label>
+            <input type="text" name="fname" id="fname" required>
+
+            <label for="lname">Last Name:</label>
+            <input type="text" name="lname" id="lname" required>
+
+            <label for="email">E-mail:</label>
+            <input type="email" name="email" id="email" required>
+
+            <label for="comments">Comments:</label>
+            <textarea name="comments" id="comments" rows="4" cols="40" class="resize-none"></textarea>
+
+            <input type="submit" value="Contact" class="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded cursor-pointer transition duration-150 ease-in-out">
+        </form>
+    </div>
+</body>
+</html>

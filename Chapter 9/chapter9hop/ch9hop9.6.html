@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Form (Grid Layout)</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body { display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background-color: #f7f7f7;
+            padding: 2rem; }
+        .title { font-size: 1.5rem;
+            font-weight: bold;
+            margin-bottom: 1rem;
+            width: 350px;
+            text-align: center; }
+
+        form { background-color: #EAEAEA;
+            font-family: Arial, sans-serif;
+            width: 350px;
+            padding: 10px;
+            border-radius: 0.5rem;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            overflow: auto; }
+        label { float: left;
+            clear: left;
+            display: block;
+            width: 100px;
+            padding-right: 10px;
+            margin-top: 10px;
+            text-align: right; }
+        input { display: block; margin-top: 10px; }
+        textarea { display: block; margin-top: 10px; }
+        input[type="submit"] { margin-left: 110px; }
+
+        form input[type="text"],
+        form input[type="email"] { border: 1px solid #ccc;
+            padding: 4px;
+            border-radius: 0.25rem; }
+        form textarea { border: 1px solid #ccc;
+            padding: 4px;
+            border-radius: 0.25rem;
+            width: 200px;
+            resize: none; }
+        input[type="submit"] { background-color: #4a4a4a;
+            color: white;
+            padding: 5px 15px;
+            border: none;
+            border-radius: 0.25rem;
+            cursor: pointer;
+            transition: background-color 0.1s; }
+        input[type="submit"]:hover { background-color: #666; }
+
+
+        @supports (display: grid) {
+            
+            form {
+                display: grid;
+                grid-template-rows: auto;
+                grid-template-columns: 6em 1fr;
+                grid-gap: 1em;
+                gap: 1em; 
+                
+                background-color: #EAEAEA;
+                font-family: Arial, sans-serif;
+                
+                width: 60%;
+                min-width: 20em;
+                padding: 1.5em;
+                
+                overflow: visible; 
+            }
+
+            label, 
+            input:not([type="submit"]),
+            textarea {
+                float: none;
+                clear: none;
+                display: initial;
+                width: auto;
+                padding: 0;
+                margin: 0;
+            }
+            
+            label {
+                text-align: right;
+            }
+
+            form input[type="text"],
+            form input[type="email"],
+            form textarea {
+                width: 100%;
+                margin: 0;
+                padding: 4px;
+            }
+
+            input[type="submit"] {
+                grid-column: 2 / 3; 
+                width: 10em;
+                margin-left: 0;
+                
+                background-color: #4a4a4a;
+                color: white;
+                padding: 5px 15px;
+                border: none;
+                border-radius: 0.25rem;
+                cursor: pointer;
+                transition: background-color 0.1s;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="title">Contact Us</div>
+    
+    <form action="#" method="post">
+        <label for="myName">Name:</label>
+        <input type="text" name="myName" id="myName" required>
+
+        <label for="myEmail">E-mail:</label>
+        <input type="email" name="myEmail" id="myEmail" required>
+
+        <label for="myComments">Comments:</label>
+        <textarea name="myComments" id="myComments" rows="2" cols="20" class="resize-none"></textarea>
+
+        <input type="submit" value="Submit">
+    </form>
+</body>
+</html>
