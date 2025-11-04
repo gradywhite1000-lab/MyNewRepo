@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>New Form Controls</title>
+    <style>
+        body { font-family: Arial, sans-serif;
+            margin: 20px; }
+        form { max-width: 600px;
+            margin: auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 8px; }
+        fieldset { margin-bottom: 20px;
+            padding: 15px;
+            border: 2px groove #ddd; }
+        legend { font-weight: bold;
+            padding: 0 10px; }
+        label { display: block;
+            margin-bottom: 5px; }
+        input[type="text"], input[type="password"], select { width: 100%;
+            padding: 8px;
+            margin-bottom: 10px;
+            box-sizing: border-box;
+            border: 1px solid #ccc;
+            border-radius: 4px; }
+    </style>
+</head>
+<body>
+
+    <form action="https://webdevbasics.net/scripts/demo.php" method="post">
+
+        <h2>New Form Controls Demonstration</h2>
+
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="username" maxlength="30" required>
+
+        <fieldset>
+            <legend>Favorite Day of the Week</legend>
+            <input type="radio" id="mon" name="fav_day" value="Monday">
+            <label for="mon">Monday</label><br>
+            <input type="radio" id="tue" name="fav_day" value="Tuesday">
+            <label for="tue">Tuesday</label><br>
+            <input type="radio" id="wed" name="fav_day" value="Wednesday">
+            <label for="wed">Wednesday</label>
+        </fieldset>
+
+        <label for="social">Favorite Social Network:</label>
+        <select id="social" name="fav_social">
+            <option value="none">-- Select One --</option>
+            <option value="facebook">Facebook</option>
+            <option value="instagram">Instagram</option>
+            <option value="linkedin">LinkedIn</option>
+            <option value="twitter">X (Twitter)</option>
+        </select>
+
+        <fieldset>
+            <legend>Shipping Address</legend>
+            <label for="address1">Address Line 1:</label>
+            <input type="text" id="address1" name="AddressLine1">
+
+            <label for="address2">Address Line 2:</label>
+            <input type="text" id="address2" name="AddressLine2">
+
+            <label for="city">City:</label>
+            <input type="text" id="city" name="City">
+
+            <label for="state">State:</label>
+            <input type="text" id="state" name="State">
+
+            <label for="zip">ZIP:</label>
+            <input type="text" id="zip" name="ZIP">
+        </fieldset>
+
+        <label for="pword">Password:</label>
+        <input type="password" id="pword" name="pword" required>
+
+        <input type="hidden" name="userid" value="12345">
+
+        <p>
+            <label>Click to Sign Up:</label><br>
+            <input type="image" src="signup.gif" alt="Sign Up Button" name="signup_submit" style="width: 100px; height: auto;">
+        </p>
+
+    </form>
+    
+    <hr>
+    
+    <p>
+        **Nolan White**<br>
+        Email: ngwhite@mail.lipscomb.edu
+    </p>
+
+</body>
+</html>
